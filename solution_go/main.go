@@ -13,8 +13,6 @@ func main() {
 		log.Fatal(err)
 	}
 
-	// pprint(problems)
-
 	solutions := new(Solutions)
 	problems.SolveProblem1(solutions)
 	problems.SolveProblem2(solutions)
