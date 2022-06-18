@@ -52,7 +52,7 @@ type Solutions struct {
 	Problem2  []uint32 `json:"problem2,omitempty"`
 	Problem3  uint32   `json:"problem3,omitempty"`
 	Problem4  uint32   `json:"problem4,omitempty"`
-	Problem5  []int    `json:"problem5,omitempty"`
+	Problem5  []uint32 `json:"problem5,omitempty"`
 	Problem6  int      `json:"problem6,omitempty"`
 	Problem7  int      `json:"problem7,omitempty"`
 	Problem8  int      `json:"problem8,omitempty"`

@@ -16,7 +16,10 @@ func (p *Problems) SolveProblem3(s *Solutions) {
 func (p *Problems) SolveProblem4(s *Solutions) {
 	s.Problem4 = littleSigma1(p.Problem4)
 }
-func (p *Problems) SolveProblem5(s *Solutions)  {}
+func (p *Problems) SolveProblem5(s *Solutions) {
+	s.Problem5 = messageSchedule(p.Problem5)
+}
+
 func (p *Problems) SolveProblem6(s *Solutions)  {}
 func (p *Problems) SolveProblem7(s *Solutions)  {}
 func (p *Problems) SolveProblem8(s *Solutions)  {}
