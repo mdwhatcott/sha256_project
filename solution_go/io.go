@@ -7,10 +7,10 @@ import (
 )
 
 type Problems struct {
-	Problem1  [][]int
-	Problem2  [][]int
-	Problem3  int
-	Problem4  int
+	Problem1  [][]uint32
+	Problem2  [][]uint32
+	Problem3  uint32
+	Problem4  uint32
 	Problem5  string
 	Problem6  int
 	Problem7  int
@@ -48,10 +48,10 @@ type Problem16 struct {
 }
 
 type Solutions struct {
-	Problem1  []int    `json:"problem1,omitempty"`
-	Problem2  []int    `json:"problem2,omitempty"`
-	Problem3  int      `json:"problem3,omitempty"`
-	Problem4  int      `json:"problem4,omitempty"`
+	Problem1  []uint32 `json:"problem1,omitempty"`
+	Problem2  []uint32 `json:"problem2,omitempty"`
+	Problem3  uint32   `json:"problem3,omitempty"`
+	Problem4  uint32   `json:"problem4,omitempty"`
 	Problem5  []int    `json:"problem5,omitempty"`
 	Problem6  int      `json:"problem6,omitempty"`
 	Problem7  int      `json:"problem7,omitempty"`

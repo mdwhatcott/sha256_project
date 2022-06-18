@@ -2,12 +2,12 @@ package main
 
 func (p *Problems) SolveProblem1(s *Solutions) {
 	for _, problem := range p.Problem1 {
-		s.Problem1 = append(s.Problem1, add32(problem[0], problem[1]))
+		s.Problem1 = append(s.Problem1, problem[0]+problem[1])
 	}
 }
 func (p *Problems) SolveProblem2(s *Solutions) {
 	for _, problem := range p.Problem2 {
-		s.Problem2 = append(s.Problem2, rightRotate32(problem[0], problem[1]))
+		s.Problem2 = append(s.Problem2, rightRotate32(problem[0], int(problem[1])))
 	}
 }
 func (p *Problems) SolveProblem3(s *Solutions) {
