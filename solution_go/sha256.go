@@ -20,3 +20,7 @@ func rightRotate32(x, n int) int {
 func littleSigma0(x int) int {
 	return rightRotate32(x, 7) ^ rightRotate32(x, 18) ^ (x >> 3)
 }
+
+func littleSigma1(x int) int {
+	return rightRotate32(x, 17) ^ rightRotate32(x, 19) ^ (x >> 10)
+}

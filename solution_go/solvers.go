@@ -13,7 +13,9 @@ func (p *Problems) SolveProblem2(s *Solutions) {
 func (p *Problems) SolveProblem3(s *Solutions) {
 	s.Problem3 = littleSigma0(p.Problem3)
 }
-func (p *Problems) SolveProblem4(s *Solutions)  {}
+func (p *Problems) SolveProblem4(s *Solutions) {
+	s.Problem4 = littleSigma1(p.Problem4)
+}
 func (p *Problems) SolveProblem5(s *Solutions)  {}
 func (p *Problems) SolveProblem6(s *Solutions)  {}
 func (p *Problems) SolveProblem7(s *Solutions)  {}
