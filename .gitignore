@@ -3,3 +3,4 @@ target
 Cargo.lock
 .idea/
 venv/
+sha-256-go

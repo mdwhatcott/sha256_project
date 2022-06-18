@@ -1,0 +1,1 @@
+go build -o ./sha-256-go solution_go/*.go && ./grade.py ./sha-256-go
