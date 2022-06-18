@@ -35,7 +35,9 @@ func (p *Problems) SolveProblem9(s *Solutions) {
 func (p *Problems) SolveProblem10(s *Solutions) {
 	s.Problem10 = round(p.Problem10.State, p.Problem10.RoundConstant, p.Problem10.ScheduleWord)
 }
-func (p *Problems) SolveProblem11(s *Solutions) {}
+func (p *Problems) SolveProblem11(s *Solutions) {
+	s.Problem11 = compress(p.Problem11.State, p.Problem11.Block)
+}
 func (p *Problems) SolveProblem12(s *Solutions) {}
 func (p *Problems) SolveProblem13(s *Solutions) {}
 func (p *Problems) SolveProblem14(s *Solutions) {}

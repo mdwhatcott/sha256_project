@@ -32,7 +32,7 @@ type Problem10 struct {
 }
 
 type Problem11 struct {
-	State []int
+	State []uint32
 	Block string
 }
 
@@ -58,7 +58,7 @@ type Solutions struct {
 	Problem8  uint32   `json:"problem8,omitempty"`
 	Problem9  uint32   `json:"problem9,omitempty"`
 	Problem10 []uint32 `json:"problem10,omitempty"`
-	Problem11 []int    `json:"problem11,omitempty"`
+	Problem11 []uint32 `json:"problem11,omitempty"`
 	Problem12 []string `json:"problem12,omitempty"`
 	Problem13 []string `json:"problem13,omitempty"`
 	Problem14 string   `json:"problem14,omitempty"`
