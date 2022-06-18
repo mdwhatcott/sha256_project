@@ -12,10 +12,10 @@ type Problems struct {
 	Problem3  uint32
 	Problem4  uint32
 	Problem5  string
-	Problem6  int
-	Problem7  int
-	Problem8  []int
-	Problem9  []int
+	Problem6  uint32
+	Problem7  uint32
+	Problem8  []uint32
+	Problem9  []uint32
 	Problem10 Problem10
 	Problem11 Problem11
 	Problem12 []int
@@ -26,9 +26,9 @@ type Problems struct {
 }
 
 type Problem10 struct {
-	State         []int
-	RoundConstant int `json:"round_constant"`
-	ScheduleWord  int `json:"schedule_word"`
+	State         []uint32
+	RoundConstant uint32 `json:"round_constant"`
+	ScheduleWord  uint32 `json:"schedule_word"`
 }
 
 type Problem11 struct {
@@ -53,11 +53,11 @@ type Solutions struct {
 	Problem3  uint32   `json:"problem3,omitempty"`
 	Problem4  uint32   `json:"problem4,omitempty"`
 	Problem5  []uint32 `json:"problem5,omitempty"`
-	Problem6  int      `json:"problem6,omitempty"`
-	Problem7  int      `json:"problem7,omitempty"`
-	Problem8  int      `json:"problem8,omitempty"`
-	Problem9  int      `json:"problem9,omitempty"`
-	Problem10 []int    `json:"problem10,omitempty"`
+	Problem6  uint32   `json:"problem6,omitempty"`
+	Problem7  uint32   `json:"problem7,omitempty"`
+	Problem8  uint32   `json:"problem8,omitempty"`
+	Problem9  uint32   `json:"problem9,omitempty"`
+	Problem10 []uint32 `json:"problem10,omitempty"`
 	Problem11 []int    `json:"problem11,omitempty"`
 	Problem12 []string `json:"problem12,omitempty"`
 	Problem13 []string `json:"problem13,omitempty"`
