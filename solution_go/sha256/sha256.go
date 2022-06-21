@@ -14,7 +14,7 @@ func LittleSigma1(x uint32) uint32 {
 	return RightRotate32(x, 17) ^ RightRotate32(x, 19) ^ (x >> 10)
 }
 
-func MessageSchedule(input string) (result []uint32) {
+func MessageSchedule(input []byte) (result []uint32) {
 	result = make([]uint32, 64)
 	for i := 0; i < 16; i++ {
 		n := i * 4
@@ -74,7 +74,7 @@ var RoundConstants = []uint32{
 	0x748f82ee, 0x78a5636f, 0x84c87814, 0x8cc70208, 0x90befffa, 0xa4506ceb, 0xbef9a3f7, 0xc67178f2,
 }
 
-func Compress(input []uint32, block string) (result []uint32) {
+func Compress(input []uint32, block []byte) (result []uint32) {
 	schedule := MessageSchedule(block)
 	state := input[:]
 	for i := 0; i < 64; i++ {
@@ -90,4 +90,53 @@ func Compress(input []uint32, block string) (result []uint32) {
 		input[6]+state[6],
 		input[7]+state[7],
 	)
+}
+
+func Padding(length int) (result []byte) {
+	remainderBytes := (length + 8) % 64 // number of bytes in the final block, including the appended length
+	fillerBytes := 64 - remainderBytes  // number of bytes we need to add, including the initial 0x80 byte
+	zeroBytes := fillerBytes - 1        // number of 0x00 bytes we need to add
+
+	result = make([]byte, 0, 1+8+zeroBytes)
+
+	result = append(result, 0x80) // first 1-bit
+
+	for x := 0; x < zeroBytes; x++ {
+		result = append(result, 0x00) // zero-padding
+	}
+	v := uint64(8 * length)
+	return append(result, // bit-length
+		byte(v>>56),
+		byte(v>>48),
+		byte(v>>40),
+		byte(v>>32),
+		byte(v>>24),
+		byte(v>>16),
+		byte(v>>8),
+		byte(v>>0),
+	)
+}
+
+var iv = []uint32{
+	0x6a09e667, 0xbb67ae85, 0x3c6ef372, 0xa54ff53a,
+	0x510e527f, 0x9b05688c, 0x1f83d9ab, 0x5be0cd19,
+}
+
+func Hash(message []byte) (result []byte) {
+	state := iv
+	input := append(message, Padding(len(message))...)
+	for x := 0; x < len(input); x += 64 {
+		state = Compress(state, input[x:x+64])
+	}
+
+	result = make([]byte, 0, 32)
+	for _, word := range state {
+		result = append(result,
+			byte(word>>24),
+			byte(word>>16),
+			byte(word>>8),
+			byte(word>>0),
+		)
+	}
+	return result
 }
